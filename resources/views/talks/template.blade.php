@@ -2,7 +2,7 @@
         @csrf
         <div>
             <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
-            <input type="text" id="title" name="title" value="{{ old('title' , $talk->title) }}"
+            <input type="text" id="title" name="title" value="{{ old('title', $talk->title ?? '') }}"
                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 "
                    placeholder="How to save a life">
             <x-input-error :messages="$errors->get('title')" />
@@ -20,7 +20,7 @@
             </div>
             <div>
                 <label for="length" class="block text-sm font-medium text-gray-700">Length</label>
-                <input type="text" id="length" name="length" value="{{ old('length' , $talk->length) }}"
+                <input type="text" id="length" name="length" 
                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                 <x-input-error :messages="$errors->get('length')" />
             </div>
